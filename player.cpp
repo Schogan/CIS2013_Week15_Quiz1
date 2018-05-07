@@ -2,6 +2,6 @@
 
 using namespace std;
 
-player::player(){
+//player::player(){
 	
-}
+//}

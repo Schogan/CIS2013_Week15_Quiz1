@@ -5,51 +5,7 @@
 
 using namespace std;
 
-	int deck[4][52];
-
-
-	int createDeck(){
-		int deck[4][52];
 		
-		for (int i=0;i<=4;i++){
-			for (int j=0;j<=13;j++){
-				//if
-				//int cardSuit rand() % 4 + 1;
-			
-				//if (i == 1){ Suit = 'D';}
-				//if (i == 2){ Suit = 'S';}
-				//if (i == 3){ Suit = 'H';}
-				//if (i == 4){ Suit = 'C';}
-			
-				//int playercard = rand() % 13 + 1;
-						
-				if (j == 10){
-					//cout << "J";
-					deck[i][10];
-				}
-				if (j == 11){
-					//cout << "Q";
-					deck[i][10];
-				}
-				if (j == 12){
-					//cout << "K";
-					deck[i][10];
-				}
-				if ((j == 13) || (j == 1)){
-					//cout << "A";
-					deck[i][11];
-				}
-				if ((j <= 9) && (j >= 2)){
-					deck[i][j];
-				}
-			}
-		}
-		for (int i=0;i<=4;i++){
-			for (int j=0;j<=13;j++){
-			cout << deck[i][j];
-			}
-		}
-	}	
 int main(){
 	bool Start_Game = false;
 	bool keep_playing = true;
@@ -63,13 +19,14 @@ int main(){
 	int dealer_total = 0;
 
 	createDeck();
-	/*while(keep_playing){
-		for (int i=0;i<=4;i++){
-			for (int j=0;j<=13;j++){
-			cout << deck[i][j];
-			}
+	//Test to verify deck creation
+	
+	/*for (int i=0;i<=3;i++){
+		for (int j=0;j<=12;j++){
+			cout << deck[i][j]<<' ';
 		}
-	}*/
+		cout<<endl;
+	}
 	
 	/*while (keep_playing) {
 		
@@ -113,6 +70,6 @@ int main(){
 								
 	}*/
 	
-	return 0;
+	//return 0;
 	
 }
