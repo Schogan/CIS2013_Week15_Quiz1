@@ -6,12 +6,13 @@ card::card(){
 	
 }
 
-	char Suit[4];
-	int playerHand[10];
+card::~card(){
+	
+}
 
 	int deck[3][51];
 	
-	int createDeck(){
+	void card::createDeck(){
 				
 		for (int i=0;i<=3;i++){
 						
@@ -34,50 +35,74 @@ card::card(){
 			}
 			cout<<endl;
 		}	
+		//Test to verify deck creation
+	
+		/*for (int i=0;i<=3;i++){
+			for (int j=0;j<=12;j++){
+				cout << deck[i][j]<<' ';
+			}
+			cout<<endl;
+		}*/
 		
 	}
-	/*int player_first_card = rand() % 13 + 1;
-				
-		if (player_first_card == 10){
-			cout << "J";
-			player_first_card = 10;
+	void card::playerDeal(){
+		/*int player_first_card_suit = rand() % 4 + 1;
+		int player_second_card_suit = rand() % 4 + 1;
+		int player_first_card_value = rand() % 13 + 1;
+		int player_second_card_value = rand() % 13 + 1;
+		int player_first_card[a][b] = deck[player_first_card_suit][player_first_card_value];
+		int player_second_card[a][b] = deck[player_second_card_suit][player_second_card_value];
+		*/
+		int playerHand[3][51];
+		
+		//Zero out playerHand
+		for (int i=0;i<=3;i++){
+			for (int j=0;j<=12;j++){
+				//cout << playerHand[i][j]<<' ';
+				playerHand[i][j]=0;
+			}
+			//cout<<endl;
 		}
-		if (player_first_card == 11){
-			cout << "Q";
-			player_first_card = 10;
+		
+		for(int i=0;i<=1;i++){
+			int A = rand() % 4 + 1;
+			int B = rand() % 13 + 1;
+			/*for(int a=0;a<=A;a++){
+				for(int b=0;b<=B;b++){
+					deck[a][b] >> playerHand[a][b];
+					
+				}
+			}*/
+			//Test to verify rand is working
+			cout << A << " and " << B << endl;
+			playerHand[A][B];
+					//playerHand[a][b]=b;
 		}
-		if (player_first_card == 12){
-			cout << "K";
-			player_first_card = 10;
+		//Test to verify player hand
+		for (int i=0;i<=3;i++){
+			for (int j=0;j<=12;j++){
+				cout << playerHand[i][j]<<' ';
+			}
+			cout<<endl;
 		}
-		if ((player_first_card == 13) || (player_first_card == 1)){
-			cout << "A";
-			player_first_card = 11;
-		}
-		if ((player_first_card <= 9) && (player_first_card >= 2)){
-			cout << player_first_card;
-		}
-		cout <<" and ";
-				
-		int player_second_card = rand() % 13 + 1;
-			
-		if (player_second_card == 10){
-			cout << "J";
-			player_second_card = 10;
-		}
-		if (player_second_card == 11){
-			cout << "Q";
-			player_second_card = 10;
-		}
-		if (player_second_card == 12){
-			cout << "K";
-			player_second_card = 10;
-		}
-		if ((player_second_card == 13) || (player_second_card == 1)){
-			cout << "A";
-			player_second_card = 11;
-		}
-		if ((player_second_card <= 9) && (player_second_card >= 2)){
-			cout << player_second_card;
-		}
-}*/
+		
+	
+	}
+	void card::dealerDeal(){
+		/*int dealer_first_card_suit = rand() % 4 + 1;
+		int dealer_second_card_suit = rand() % 4 + 1;
+		int dealer_first_card_value = rand() % 13 + 1;
+		int dealer_second_card_value = rand() % 13 + 1;
+		int dealer_first_card[a][b] = deck[dealer_first_card_suit][dealer_first_card_value];
+		int dealer_second_card[a][b] = deck[dealer_second_card_suit][dealer_second_card_value];
+		*/
+	}
+	
+	void card::playerCard(){
+		
+	}
+	
+	void card::dealerCard(){
+		
+	}
+	

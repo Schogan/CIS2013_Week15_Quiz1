@@ -9,5 +9,9 @@ class card{
 		card();
 		~card();
 		
-		int createDeck();
+		void createDeck();
+		void playerCard();
+		void dealerCard();
+		void playerDeal();
+		void dealerDeal();
 };

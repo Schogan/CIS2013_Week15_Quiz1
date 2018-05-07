@@ -17,15 +17,29 @@ int main(){
 	bool Run_Eval = false;
 	int player_total = 0;
 	int dealer_total = 0;
-
-	createDeck();
-	//Test to verify deck creation
+	char action;
+	card Cards;
+	//player Player;
 	
-	/*for (int i=0;i<=3;i++){
-		for (int j=0;j<=12;j++){
-			cout << deck[i][j]<<' ';
-		}
-		cout<<endl;
+	while (action != 'X') {
+		cout << "what would you like to do?"<<endl;
+		cout << "Create Deck (C)"<< endl;
+		cout << "Test playerDeal (P)"<<endl;
+		cout << "Exit Game (X)"<< endl;
+		cin>>action;
+		
+		switch(action){
+			case 'C':
+				cout<<"stuff";
+				Cards.createDeck();
+				break;
+			case 'P':
+				cout<<"TEST"<<endl;
+				Cards.playerDeal();
+			//case 'X':
+				//cout<< "goodbye"
+				//keep_playing=false;
+		}		
 	}
 	
 	/*while (keep_playing) {

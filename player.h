@@ -4,5 +4,9 @@
 using namespace std;
 
 class player{
+	public:
+		
+		player();
+		~player();
 	
 };
