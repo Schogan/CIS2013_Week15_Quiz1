@@ -2,6 +2,7 @@
 #include <cstring>
 #include "card.h"
 #include "player.h"
+#define DEBUG 0 //Set Debug mode
 
 using namespace std;
 
@@ -18,14 +19,22 @@ int main(){
 	int player_total = 0;
 	int dealer_total = 0;
 	char action;
+	
+	#if DEBUG
+	cout<<"!!!DEBUG MODE ACTIVE ON main.cpp!!!"<<endl;
+	#endif
+	
 	card Cards;
-	//player Player;
+	player playerOne;
 	
 	while (action != 'X') {
+		cout << "Welcome: "<<playerOne.playerOneName<<endl;
 		cout << "what would you like to do?"<<endl;
 		cout << "Create Deck (C)"<< endl;
 		cout << "Test playerDeal (P)"<<endl;
+		cout << "Play (A)"<<endl;
 		cout << "Hit (H)"<<endl;
+		cout << "Stay (S)"<<endl;
 		cout << "Exit Game (X)"<< endl;
 		cin>>action;
 		
@@ -38,10 +47,18 @@ int main(){
 				cout<<"Your first cards are:"<<endl;
 				Cards.playerDeal();
 				break;
+			case 'A':
+				playerOne.playerAction();
+				
+				break;
 			case 'H':
-				cout<<"You choose to hit:"<<endl;
-				Cards.playerCard();
-				break;	
+				playerOne.playerHit();
+				
+				break;
+			case 'S':
+				playerOne.playerStay();
+				
+				break;
 			case 'X':
 				cout<< "goodbye";
 				//keep_playing=false;

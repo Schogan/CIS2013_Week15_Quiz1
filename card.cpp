@@ -1,11 +1,13 @@
 #include "card.h"
 #include <ctime>
-#define DEBUG 1 //Set Debug mode
+#define DEBUG 0 //Set Debug mode
 
 using namespace std;
 
 card::card(){
-	
+	#if DEBUG
+	cout<<"!!!DEBUG MODE ACTIVE ON card.cpp!!!"<<endl;
+	#endif
 }
 
 card::~card(){
@@ -137,5 +139,13 @@ card::~card(){
 		else if(dealerHand[A][B]==1){
 			dealerCard();
 		}
+	}
+	
+	void getPlayerHand(){
+		
+	}
+	
+	void getDealerHand(){
+		
 	}
 	
