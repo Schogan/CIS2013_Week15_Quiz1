@@ -25,20 +25,25 @@ int main(){
 		cout << "what would you like to do?"<<endl;
 		cout << "Create Deck (C)"<< endl;
 		cout << "Test playerDeal (P)"<<endl;
+		cout << "Hit (H)"<<endl;
 		cout << "Exit Game (X)"<< endl;
 		cin>>action;
 		
 		switch(action){
 			case 'C':
-				cout<<"stuff";
+				cout<<"Deck has been created!"<<endl;
 				Cards.createDeck();
 				break;
 			case 'P':
-				cout<<"TEST"<<endl;
+				cout<<"Your first cards are:"<<endl;
 				Cards.playerDeal();
 				break;
-			//case 'X':
-				//cout<< "goodbye"
+			case 'H':
+				cout<<"You choose to hit:"<<endl;
+				Cards.playerCard();
+				break;	
+			case 'X':
+				cout<< "goodbye";
 				//keep_playing=false;
 		}		
 	}

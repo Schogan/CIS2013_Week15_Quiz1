@@ -1,5 +1,6 @@
 #include "card.h"
 #include <ctime>
+#define DEBUG 1 //Set Debug mode
 
 using namespace std;
 
@@ -33,7 +34,7 @@ card::~card(){
 			}
 			cout<<endl;
 		}	
-		//Test to verify deck creation
+	#if DEBUG	//Test to verify deck creation
 	
 		for (int i=0;i<=suit;i++){
 			for (int j=0;j<=numCards;j++){
@@ -41,7 +42,7 @@ card::~card(){
 			}
 			cout<<endl;
 		}
-		
+	#endif	
 	}
 	//----------------------------------------------------------------------
 	void card::playerDeal(){
@@ -64,19 +65,19 @@ card::~card(){
 			playerHand[A][B]=1;
 					
 
-			//Test to verify rand is working
-			//cout << A << " and " << B << endl;
-			
+		#if DEBUG	//Test to verify rand is working
+			cout << A << " and " << B << endl;
+		#endif
 		}
 		
-		//Test to verify player hand
-		/*for (int i=0;i<=suit;i++){
+		#if DEBUG//Test to verify player hand
+		for (int i=0;i<=suit;i++){
 			for (int j=0;j<=numCards;j++){
 				cout << playerHand[i][j]<<' ';
 			}
 			cout<<endl;
-		}*/
-		
+		}
+		#endif
 	
 	}
 	//----------------------------------------------------------------------
@@ -99,18 +100,19 @@ card::~card(){
 			dealerHand[A][B]=1;
 					
 
-			//Test to verify rand is working
-			//cout << A << " and " << B << endl;
-			
+		#if DEBUG	//Test to verify rand is working
+			cout << A << " and " << B << endl;
+		#endif
 		}
 		
-		//Test to verify dealer hand
-		/*for (int i=0;i<=suit;i++){
+		#if DEBUG//Test to verify dealer hand
+		for (int i=0;i<=suit;i++){
 			for (int j=0;j<=numCards;j++){
 				cout << dealerHand[i][j]<<' ';
 			}
 			cout<<endl;
-		}*/
+		}
+		#endif
 	}
 	//----------------------------------------------------------------------
 	void card::playerCard(){
