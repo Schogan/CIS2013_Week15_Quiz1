@@ -36,6 +36,7 @@ int main(){
 			case 'P':
 				cout<<"TEST"<<endl;
 				Cards.playerDeal();
+				break;
 			//case 'X':
 				//cout<< "goodbye"
 				//keep_playing=false;
