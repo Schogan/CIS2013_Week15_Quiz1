@@ -1,5 +1,7 @@
 #include "card.h"
+#include <stdlib.h>
 #include <ctime>
+#include <windows.h>
 #define DEBUG 1 //Set Debug mode
 
 using namespace std;
@@ -10,7 +12,7 @@ card::card(){
 	cout<<"!!!DEBUG MODE ACTIVE ON card.cpp!!!"<<endl;
 	cout <<"---------------------------------------"<<endl;
 	#endif
-	srand(time(NULL));
+	//srand(time(NULL));
 	//createDeck();
 	//playerDeal();
 	//dealerDeal();
@@ -34,8 +36,16 @@ card::~card(){
 		cout <<"---------------------------------------"<<endl;
 	#endif	
 		srand(time(NULL));
-		RandA = rand() % 4;
-		RandB = rand() % 12 + 1;
+		for(int i=1;i>=1;i--){
+			RandA = rand() % 4;
+			Sleep(1000);
+		}
+		
+		for(int i=1;i>=1;i--){
+			RandB = rand() % 12 + 1;
+			Sleep(1000);
+		}
+		
 	}
 	
 	//----------------------------------------------------------------------
@@ -69,7 +79,7 @@ card::~card(){
 	//----------------------------------------------------------------------
 	void card::playerDeal(){
 		
-		srand(time(NULL));
+		//srand(time(NULL));
 		
 		//Zero out playerHand
 		for (int i=0;i<=suit;i++){
@@ -111,7 +121,7 @@ card::~card(){
 	}
 	//----------------------------------------------------------------------
 	void card::dealerDeal(){
-		srand(time(NULL));
+		//srand(time(NULL));
 		
 		//Zero out dealerHand
 		for (int i=0;i<=suit;i++){
