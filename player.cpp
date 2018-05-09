@@ -172,8 +172,11 @@ int cardSelect(int CS,int CV){
 void player::printPlayerHand(){
 	
 	//cout<< "Your cards are: "<<endl;
-	for(int i=0;i<=suit;i++){
-		for(int j=0;j<=numCards;j++){
+	for(int i=0;i<=3;i++){
+		for(int j=0;j<=12;j++){
+	#if DEBUG
+			//cout <<Cards.playerHand[i][j];
+	#endif		
 			if (Cards.playerHand[i][j]==1){
 				//cardSuit=i;
 	#if DEBUG			//cardValue=j;
@@ -183,6 +186,9 @@ void player::printPlayerHand(){
 	#endif			
 				cardSelect(i,j);
 			}
+			//else if (Cards.playerHand[i][j]!=1){
+				
+			//}
 		}
 	}
 }

@@ -51,7 +51,8 @@ int main(){
 				break;
 	
 			case 'P':
-				//cout<<"Your first cards are:"<<endl;
+				cout << "Printing Player's Hand"<<endl;
+				Cards.printPlayerDeck();
 				playerOne.printPlayerHand();
 				break;
 	#endif		

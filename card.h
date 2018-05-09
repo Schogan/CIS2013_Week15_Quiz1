@@ -22,4 +22,6 @@ class card{
 		void getDealerHand();
 		void printDeck();
 		int randomNumGen();
+		void printDealerDeck();
+		void printPlayerDeck();
 };

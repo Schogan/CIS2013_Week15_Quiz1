@@ -94,10 +94,13 @@ card::~card(){
 			//int A = rand() % 4;
 			//int B = rand() % 12 + 1;
 			card::randomNumGen();
-			
+			if (deck[RandA][RandB]!=1){
 			playerHand[RandA][RandB]=1;
 			deck[RandA][RandB]=1;
-					
+			}
+			else if (deck[RandA][RandB]==1){
+				card::randomNumGen();
+			}
 
 		#if DEBUG	//Test to verify rand is working
 			cout <<"---------------------------------------"<<endl;
@@ -137,8 +140,14 @@ card::~card(){
 			//int B = rand() % 12 + 1;
 			card::randomNumGen();
 			
-			dealerHand[RandA][RandB]=1;
-			deck[RandA][RandB]=1;		
+			if (deck[RandA][RandB]!=1){
+				dealerHand[RandA][RandB]=1;
+				deck[RandA][RandB]=1;
+			}
+			else if (deck[RandA][RandB]==1){
+				card::randomNumGen();
+			}
+					
 
 		#if DEBUG	//Test to verify rand is working
 			cout <<"---------------------------------------"<<endl;
@@ -164,11 +173,16 @@ card::~card(){
 		//int A = rand() % 4;
 		//int B = rand() % 12 + 1;
 		card::randomNumGen();
-			
-		if(playerHand[RandA][RandB] !=1){
+	#if DEBUG
+		cout <<"---------------------------------------"<<endl;
+		cout << RandA << " and " << RandB << endl;
+		cout <<"---------------------------------------"<<endl;		
+	#endif	
+		if(deck[RandA][RandB] !=1){
 			playerHand[RandA][RandB]=1;
+			deck[RandA][RandB]=1;
 		}
-		else if(playerHand[RandA][RandB]==1){
+		else if(deck[RandA][RandB]==1){
 			playerCard();
 		}
 	}
@@ -178,10 +192,11 @@ card::~card(){
 		//int B = rand() % 12 + 1;
 		card::randomNumGen();
 			
-		if(dealerHand[RandA][RandB] !=1){
+		if(deck[RandA][RandB] !=1){
 			dealerHand[RandA][RandB]=1;
+			deck[RandA][RandB]=1;
 		}
-		else if(dealerHand[RandA][RandB]==1){
+		else if(deck[RandA][RandB]==1){
 			dealerCard();
 		}
 	}
@@ -198,6 +213,22 @@ card::~card(){
 		for (int i=0;i<=suit;i++){
 			for (int j=0;j<=numCards;j++){
 				cout << deck[i][j]<<' ';
+			}
+			cout<<endl;
+		}
+	}
+	void card::printPlayerDeck(){
+		for (int i=0;i<=suit;i++){
+			for (int j=0;j<=numCards;j++){
+				cout << playerHand[i][j]<<' ';
+			}
+			cout<<endl;
+		}
+	}
+	void card::printDealerDeck(){
+		for (int i=0;i<=suit;i++){
+			for (int j=0;j<=numCards;j++){
+				cout << dealerHand[i][j]<<' ';
 			}
 			cout<<endl;
 		}
