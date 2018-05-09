@@ -9,6 +9,7 @@ class player{
 	public:
 		string playerOneName;
 		
+		
 		player();
 		~player();
 		
@@ -19,5 +20,6 @@ class player{
 		void playerHit();
 		void playerStay();
 		void getPlayerName();
+		//int cardSelect(int,int);
 	
 };

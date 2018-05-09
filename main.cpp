@@ -2,7 +2,7 @@
 #include <cstring>
 #include "card.h"
 #include "player.h"
-#define DEBUG 0 //Set Debug mode
+#define DEBUG 1 //Set Debug mode
 
 using namespace std;
 
@@ -30,8 +30,12 @@ int main(){
 	while (action != 'X') {
 		cout << "Welcome: "<<playerOne.playerOneName<<endl;
 		cout << "what would you like to do?"<<endl;
-		cout << "Create Deck (C)"<< endl;
-		cout << "Test playerDeal (P)"<<endl;
+	#if DEBUG
+		cout <<"---------------------------------------"<<endl;
+		cout << "Check Deck (C)"<< endl;
+		cout << "Print PlayerHand (P)"<<endl;
+		cout <<"---------------------------------------"<<endl;
+	#endif	
 		cout << "Play (A)"<<endl;
 		cout << "Hit (H)"<<endl;
 		cout << "Stay (S)"<<endl;
@@ -39,15 +43,22 @@ int main(){
 		cin>>action;
 		
 		switch(action){
+	#if DEBUG 
+			
 			case 'C':
-				cout<<"Deck has been created!"<<endl;
-				Cards.createDeck();
+				cout<<"Current Deck status:"<<endl;
+				Cards.printDeck();
 				break;
+	
 			case 'P':
-				cout<<"Your first cards are:"<<endl;
-				Cards.playerDeal();
+				//cout<<"Your first cards are:"<<endl;
+				playerOne.printPlayerHand();
 				break;
+	#endif		
 			case 'A':
+				Cards.createDeck();
+				Cards.playerDeal();
+				Cards.dealerDeal();
 				playerOne.playerAction();
 				
 				break;

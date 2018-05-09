@@ -5,8 +5,10 @@ using namespace std;
 
 class card{
 	public:
-		int playerHand[suit][numCards];
-		int dealerHand[suit][numCards];
+		//const int suit=3;
+		//const int numCards=12;
+		int playerHand[3][12];
+		int dealerHand[3][12];
 		
 		card();
 		~card();
@@ -18,4 +20,6 @@ class card{
 		void dealerDeal();
 		void getPlayerHand();
 		void getDealerHand();
+		void printDeck();
+		int randomNumGen();
 };
